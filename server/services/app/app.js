@@ -6,6 +6,7 @@ const PORT = Number(process.env.PORT) || 4002;
 app.get("/", (_, res) => {
   res.status(200).json({
     message: `Welcome to App Services with DB_URL = ${process.env.DATABASE_URL}!`,
+    title: "Hello, Hacktiv8 Phase 3 - Batch 003!",
     os: os.platform(),
   });
 });
