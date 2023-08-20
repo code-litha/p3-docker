@@ -5,7 +5,7 @@ const PORT = Number(process.env.PORT) || 4001;
 
 app.get("/", (_, res) => {
   res.status(200).json({
-    message: `Welcome to User Service with DB_URL ${process.env.DATABASE_URL} with test!`,
+    message: `Welcome to User Service with DB_URL ${process.env.DATABASE_URL}!`,
     os: os.platform(),
   });
 });
