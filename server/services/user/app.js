@@ -6,6 +6,7 @@ const PORT = Number(process.env.PORT) || 4001;
 app.get("/", (_, res) => {
   res.status(200).json({
     message: `Welcome to User Service with DB_URL ${process.env.DATABASE_URL}!`,
+    title: "Hacktiv8 - Phase 3 - Intro Docker",
     os: os.platform(),
   });
 });

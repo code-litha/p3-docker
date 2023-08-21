@@ -1,0 +1,18 @@
+services:
+  app-service:
+    build: ./services/app
+    ports:
+      - "4002:4002"
+  user-service:
+    build: ./services/user
+    ports:
+      - "4001:4001"
+    environment:
+      - DATABASE_URL=${MONGO_DB_URL}
+  orchestrator:
+    build: ./orchestrator
+    ports:
+      - "80:4000"
+    environment:
+      - APP_SERVICE_URL=http://app-service:4002
+      - USER_SERVICE_URL=http://user-service:4001

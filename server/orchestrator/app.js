@@ -16,6 +16,7 @@ app.get("/", (_, res) => {
 
 app.get("/users", async (_, res) => {
   try {
+    console.log(USER_SERVICE_URL, "<<< user service url nih");
     const { data } = await axios.get(`${USER_SERVICE_URL}/users`);
     res.status(200).json(data);
   } catch (error) {
