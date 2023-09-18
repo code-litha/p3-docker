@@ -1,0 +1,20 @@
+services:
+  service-app:
+    build: ./services/app
+    ports:
+      - "4002:4002"
+    environment:
+      - DATABASE_URL=${POSTGRE_DB_URL}
+  service-user:
+    build: ./services/user
+    ports:
+      - "4001:4001"
+    environment:
+      - DATABASE_URL=${MONGO_DB_URL}
+  orchestrator:
+    build: ./orchestrator
+    ports:
+      - "80:4000"
+    environment:
+      - APP_SERVICE_URL=http://service-app:4002
+      - USER_SERVICE_URL=http://service-user:4001
