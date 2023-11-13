@@ -5,6 +5,7 @@ WORKDIR /user
 
 ENV NODE_ENV=production
 ENV PORT=4001
+ENV DATABASE_URL=mongodb+srv//...
 
 COPY package.json package-lock.json /user/
 

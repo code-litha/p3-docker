@@ -59,6 +59,7 @@ WORKDIR /usr/local/app
 
 # untuk set ENV dalam aplikasi kita
 ENV PORT=4002
+ENV NODE_ENV=production
 
 # copy deps yang ada di apps ke WORKDIR
 COPY package.json package-lock.json /usr/local/app/
